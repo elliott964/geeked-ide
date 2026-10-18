@@ -1,5 +1,7 @@
 # Geeked IDE
 
+**[Website](https://geeked.yeahelliott.com)** · **[Download for Windows](https://github.com/elliott964/geeked-ide/releases/latest)**
+
 An **Agent Development Environment**: a VS Code–style desktop app where the editor is an AI chat. It runs on the **Claude Agent SDK**, so every chat has the full Claude Code toolset: file read/write/edit, terminal commands, web search and fetch, todo lists, subagents, skills, plugins, MCP servers, slash commands, plan mode, permission prompts, file checkpoints, and Ultracode workflows.
 
 ## Models
@@ -90,3 +92,7 @@ src/preload/    Typed, sandboxed bridge exposed as window.geeked
 src/shared/     Model/effort catalogue and the IPC contract
 src/renderer/   React UI: workbench, chat transcript, tool cards, composer
 ```
+
+## Website
+
+The landing page lives in `website/` (Next.js) and deploys to Vercel at https://geeked.yeahelliott.com. Deploy it with `npx vercel deploy --prod` from `website/`.
