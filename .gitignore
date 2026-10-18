@@ -7,3 +7,4 @@ release/
 website/node_modules/
 website/.next/
 .env*
+.claude/
