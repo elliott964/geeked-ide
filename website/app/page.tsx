@@ -179,7 +179,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="frame">
-                <Image src={browserShot} alt="GeekedGPT's screenshot of the coffee shop order confirmation inline in the chat, next to the live browser pane" sizes="(max-width: 1000px) 100vw, 620px" placeholder="blur" />
+                <Image src={browserShot} alt="GeekedGPT's screenshot of the coffee shop order confirmation inline in the chat, next to the live browser pane" quality={95} sizes="(max-width: 1000px) 100vw, 620px" placeholder="blur" />
               </div>
             </Reveal>
           </div>

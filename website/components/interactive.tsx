@@ -80,7 +80,7 @@ export function HeroShot({ src, alt }: { src: StaticImageData; alt: string }) {
       <div className="rise" style={{ animationDelay: '0.3s' }}>
         <motion.div style={{ rotateX, scale, transformOrigin: 'center top' }}>
           <div className="frame">
-            <Image src={src} alt={alt} preload sizes="(max-width: 1160px) 100vw, 1120px" placeholder="blur" />
+            <Image src={src} alt={alt} preload quality={95} sizes="(max-width: 1160px) 100vw, 1120px" placeholder="blur" />
           </div>
         </motion.div>
       </div>
@@ -157,7 +157,7 @@ export function Showcase({ slides }: { slides: Slide[] }) {
             transition={{ type: 'spring', stiffness: 260, damping: 28 }}
             className="frame"
           >
-            <Image src={s.image} alt={s.alt} sizes="(max-width: 1000px) 100vw, 720px" placeholder="blur" />
+            <Image src={s.image} alt={s.alt} quality={95} sizes="(max-width: 1000px) 100vw, 720px" placeholder="blur" />
           </motion.div>
         </AnimatePresence>
       </div>
