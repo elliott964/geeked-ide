@@ -30,31 +30,31 @@ export default function Home() {
           <div className="hero-grid" />
           <div className="container">
             <div className="hero-copy">
-              <Reveal y={12}>
+              <div className="rise">
                 <a className="pill" href={RELEASES_URL} target="_blank" rel="noreferrer">
                   <span className="pill-dot">v{VERSION}</span> Built on the Claude Agent SDK
                 </a>
-              </Reveal>
-              <Reveal delay={0.05}>
+              </div>
+              <div className="rise" style={{ animationDelay: '0.06s' }}>
                 <h1>
                   Describe it.
                   <br />
                   <span className="grad-text">GeekedGPT builds it.</span>
                 </h1>
-              </Reveal>
-              <Reveal delay={0.12}>
+              </div>
+              <div className="rise" style={{ animationDelay: '0.12s' }}>
                 <p className="hero-sub">
                   Geeked IDE is an agent development environment for Windows. It looks like VS Code, but the editor is a chat, and the agent in it can
                   edit your files, run commands, and click through your app in a built-in browser.
                 </p>
-              </Reveal>
-              <Reveal delay={0.18}>
+              </div>
+              <div className="rise" style={{ animationDelay: '0.18s' }}>
                 <div className="hero-ctas">
                   <DownloadButton />
                   <GitHubButton />
                 </div>
                 <div className="hero-note">Windows 10 and 11, 64-bit · Free download · Uses your Claude account or an Anthropic API key</div>
-              </Reveal>
+              </div>
             </div>
             <HeroShot src={hero} alt="Geeked IDE with a chat on the left where GeekedGPT tested a coffee shop site, and the built-in browser on the right showing the confirmed order" />
             <Reveal>

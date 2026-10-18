@@ -52,6 +52,7 @@ export function Nav() {
 export function Reveal({ children, delay = 0, y = 24, className, style }: { children: ReactNode; delay?: number; y?: number; className?: string; style?: CSSProperties }) {
   return (
     <motion.div
+      data-reveal=""
       className={className}
       style={style}
       initial={{ opacity: 0, y }}
@@ -76,16 +77,13 @@ export function HeroShot({ src, alt }: { src: StaticImageData; alt: string }) {
   return (
     <div className="shot-stage" ref={ref}>
       <motion.div className="shot-glow" style={{ opacity: glow }} />
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: 'spring', stiffness: 60, damping: 18, delay: 0.35 }}
-        style={{ rotateX, scale, transformOrigin: 'center top' }}
-      >
-        <div className="frame">
-          <Image src={src} alt={alt} preload sizes="(max-width: 1160px) 100vw, 1120px" placeholder="blur" />
-        </div>
-      </motion.div>
+      <div className="rise" style={{ animationDelay: '0.3s' }}>
+        <motion.div style={{ rotateX, scale, transformOrigin: 'center top' }}>
+          <div className="frame">
+            <Image src={src} alt={alt} preload sizes="(max-width: 1160px) 100vw, 1120px" placeholder="blur" />
+          </div>
+        </motion.div>
+      </div>
     </div>
   )
 }
