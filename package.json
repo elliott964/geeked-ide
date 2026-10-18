@@ -1,0 +1,77 @@
+{
+  "name": "geeked-ide",
+  "productName": "Geeked IDE",
+  "version": "1.0.0",
+  "description": "Geeked IDE - an Agent Development Environment powered by the Claude Agent SDK",
+  "homepage": "https://geeked.yeahelliott.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elliott964/geeked-ide.git"
+  },
+  "type": "module",
+  "main": "./out/main/index.js",
+  "author": "Elliott",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "dist": "electron-vite build && electron-builder --win",
+    "postinstall": "node node_modules/electron/install.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.302"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vscode/codicons": "^0.0.46-24",
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^6.0.0",
+    "highlight.js": "^11.12.0",
+    "motion": "^14.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.15"
+  },
+  "build": {
+    "appId": "com.geeked.ide",
+    "productName": "Geeked IDE",
+    "directories": {
+      "output": "release",
+      "buildResources": "resources"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/@anthropic-ai/claude-agent-sdk*/**",
+      "resources/**"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "resources/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "Geeked IDE",
+      "artifactName": "Geeked-IDE-Setup-${version}.${ext}"
+    }
+  }
+}

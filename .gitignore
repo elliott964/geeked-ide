@@ -1,0 +1,9 @@
+node_modules/
+out/
+release/
+*.log
+.vercel/
+.next/
+website/node_modules/
+website/.next/
+.env*
